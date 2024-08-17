@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>UDRS</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -45,6 +47,18 @@
         background-color: #0056b3;
         border-color: #004085;
       }
+
+      @media (max-width: 768px) {
+        .form-floating label {
+            font-size: 0.875rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+        }
+        }
+
     </style>
   </head>
 

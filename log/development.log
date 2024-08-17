@@ -6965,3 +6965,126 @@ Processing by ProfilesController#edit as HTML
 Completed 200 OK in 32ms (Views: 25.4ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 17.1ms)
 
 
+Started GET "/admin/users" for 127.0.0.1 at 2024-08-17 20:00:20 +0000
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (20.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.erb:16
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.0ms | GC: 2.4ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 2.9ms)
+Completed 200 OK in 43ms (Views: 10.2ms | ActiveRecord: 21.0ms (2 queries, 0 cached) | GC: 7.5ms)
+
+
+Started GET "/admin/basentas" for 127.0.0.1 at 2024-08-17 20:00:20 +0000
+Processing by Admin::BasentasController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/basentas/index.html.erb within layouts/application
+  [1m[36mBasenta Load (2.0ms)[0m  [1m[34mSELECT "basentas".* FROM "basentas"[0m
+  ↳ app/views/admin/basentas/index.html.erb:17
+  Rendered admin/basentas/index.html.erb within layouts/application (Duration: 19.1ms | GC: 0.4ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | GC: 0.6ms)
+Completed 200 OK in 35ms (Views: 14.5ms | ActiveRecord: 15.5ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2024-08-17 20:00:21 +0000
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.erb:16
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 0.8ms)
+Completed 200 OK in 18ms (Views: 11.2ms | ActiveRecord: 2.8ms (2 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/admin/users/new" for 127.0.0.1 at 2024-08-17 20:00:23 +0000
+Processing by Admin::UsersController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/users/new.html.erb within layouts/application
+  Rendered admin/users/_form.html.erb (Duration: 6.4ms | GC: 0.0ms)
+  Rendered admin/users/new.html.erb within layouts/application (Duration: 8.2ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 14.7ms | ActiveRecord: 3.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2024-08-17 20:00:24 +0000
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.erb:16
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 5.2ms | ActiveRecord: 6.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-17 21:55:01 +0000
+Processing by NewConvertsController#new as HTML
+  Rendering layout layouts/public.html.erb
+  Rendering new_converts/new.html.erb within layouts/public
+  Rendered new_converts/new.html.erb within layouts/public (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/public.html.erb (Duration: 16.3ms | GC: 0.0ms)
+Completed 200 OK in 193ms (Views: 17.4ms | ActiveRecord: 23.6ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-17 21:55:25 +0000
+Processing by NewConvertsController#new as HTML
+  Rendering layout layouts/public.html.erb
+  Rendering new_converts/new.html.erb within layouts/public
+  Rendered new_converts/new.html.erb within layouts/public (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/public.html.erb (Duration: 6.7ms | GC: 0.9ms)
+Completed 200 OK in 38ms (Views: 7.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 25.5ms)
+
+
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-17 21:59:21 +0000
+Processing by NewConvertsController#new as HTML
+  Rendering layout layouts/public.html.erb
+  Rendering new_converts/new.html.erb within layouts/public
+  Rendered new_converts/new.html.erb within layouts/public (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/public.html.erb (Duration: 16.6ms | GC: 5.7ms)
+Completed 200 OK in 58ms (Views: 17.3ms | ActiveRecord: 33.9ms (0 queries, 0 cached) | GC: 5.7ms)
+
+
+Started GET "/assets/application.css-be5fef1df8857eda674f23b52fcb0494f0e95ba952a1036d5386ed9ed4b56ea4.map" for 127.0.0.1 at 2024-08-17 21:59:22 +0000
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-17 21:59:23 +0000
+Processing by NewConvertsController#new as HTML
+  Rendering layout layouts/public.html.erb
+  Rendering new_converts/new.html.erb within layouts/public
+  Rendered new_converts/new.html.erb within layouts/public (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/public.html.erb (Duration: 4.3ms | GC: 0.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-17 22:02:02 +0000
+Processing by NewConvertsController#new as HTML
+  Rendering layout layouts/public.html.erb
+  Rendering new_converts/new.html.erb within layouts/public
+  [1m[36mBasenta Load (3.1ms)[0m  [1m[34mSELECT "basentas".* FROM "basentas"[0m
+  ↳ app/views/new_converts/new.html.erb:88
+  Rendered new_converts/new.html.erb within layouts/public (Duration: 22.3ms | GC: 0.3ms)
+  Rendered layout layouts/public.html.erb (Duration: 33.3ms | GC: 0.3ms)
+Completed 200 OK in 66ms (Views: 28.5ms | ActiveRecord: 31.6ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-17 22:02:03 +0000
+Processing by NewConvertsController#new as HTML
+  Rendering layout layouts/public.html.erb
+  Rendering new_converts/new.html.erb within layouts/public
+  [1m[36mBasenta Load (1.2ms)[0m  [1m[34mSELECT "basentas".* FROM "basentas"[0m
+  ↳ app/views/new_converts/new.html.erb:88
+  Rendered new_converts/new.html.erb within layouts/public (Duration: 3.8ms | GC: 0.4ms)
+  Rendered layout layouts/public.html.erb (Duration: 7.1ms | GC: 0.6ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
