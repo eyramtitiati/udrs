@@ -1,0 +1,8 @@
+<!-- app/views/admin/basentas/show.html.erb -->
+<h1>Basenta Details</h1>
+
+<p><strong>Name:</strong> <%= @basenta.name %></p>
+<p><strong>Location:</strong> <%= @basenta.location %></p>
+<p><strong>Contact Person:</strong> <%= @basenta.contact_person %></p>
+
+<%= link_to 'Back to Basentas', admin_basentas_path, class: 'btn btn-secondary mt-3' %>

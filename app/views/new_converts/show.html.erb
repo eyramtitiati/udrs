@@ -1,0 +1,27 @@
+<h1>Convert Details</h1>
+
+<p><strong>Name:</strong> <%= @new_convert.name %></p>
+<p><strong>Gender:</strong> <%= @new_convert.gender %></p>
+<p><strong>Date of Birth:</strong> <%= @new_convert.date_of_birth %></p>
+
+<h3>Contact Information</h3>
+<p><strong>Contact Number 1:</strong> <%= @new_convert.contact_number_1 %></p>
+<p><strong>Contact Number 2:</strong> <%= @new_convert.contact_number_2 %></p>
+
+<h3>Location Details</h3>
+<p><strong>House Number:</strong> <%= @new_convert.house_number %></p>
+<p><strong>Landmark:</strong> <%= @new_convert.landmark %></p>
+<p><strong>Area:</strong> <%= @new_convert.area %></p>
+<p><strong>City:</strong> <%= @new_convert.city %></p>
+
+<h3>Other Key Contact</h3>
+<p><strong>Name:</strong> <%= @new_convert.other_contact_name %></p>
+<p><strong>Contact Number:</strong> <%= @new_convert.other_contact_number %></p>
+<p><strong>Relationship:</strong> <%= @new_convert.other_contact_relationship %></p>
+
+<h3>Inviter Details</h3>
+<p><strong>Inviter Name:</strong> <%= @new_convert.inviter_name %></p>
+<p><strong>Inviter Contact:</strong> <%= @new_convert.inviter_contact %></p>
+
+<%= link_to 'Back to Registration', new_new_convert_path, class: 'btn btn-secondary mt-3' %>
+<%= link_to 'View All Converts', new_converts_path, class: 'btn btn-primary mt-3' %>

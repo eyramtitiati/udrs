@@ -1,0 +1,39 @@
+<!-- app/views/admin_dashboard/index.html.erb -->
+<h1 class="text-center">Admin Dashboard</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card text-white bg-primary">
+        <div class="card-header">Total New Converts</div>
+        <div class="card-body">
+          <h5 class="card-title"><%= @total_new_converts %></h5>
+          <p class="card-text">New Converts registered in the system.</p>
+          <%= link_to 'View All Converts', new_converts_path, class: 'btn btn-light' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card text-white bg-success">
+        <div class="card-header">Total Basentas</div>
+        <div class="card-body">
+          <h5 class="card-title"><%= @total_basentas %></h5>
+          <p class="card-text">Basentas registered in the system.</p>
+          <%= link_to 'View All Basentas', admin_basentas_path, class: 'btn btn-light' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card text-white bg-info">
+        <div class="card-header">Total Users</div>
+        <div class="card-body">
+          <h5 class="card-title"><%= @total_users %></h5>
+          <p class="card-text">Users registered in the system.</p>
+          <%= link_to 'View All Users', admin_users_path, class: 'btn btn-light' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

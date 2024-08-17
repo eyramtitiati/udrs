@@ -1,0 +1,19 @@
+<!-- app/views/admin/basentas/_form.html.erb -->
+<%= form_with(model: basenta, url: admin_basentas_path) do |f| %>
+  <div class="mb-3">
+    <%= f.label :name, class: "form-label" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :location, class: "form-label" %>
+    <%= f.text_field :location, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :contact_person, class: "form-label" %>
+    <%= f.text_field :contact_person, class: "form-control" %>
+  </div>
+
+  <%= f.submit 'Create Basenta', class: 'btn btn-primary' %>
+<% end %>

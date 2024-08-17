@@ -1,0 +1,30 @@
+<h1>All Converts</h1>
+
+<%= link_to 'Add New Convert', new_new_convert_path, class: 'btn btn-primary mb-3' %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Date of Birth</th>
+      <th>Contact Number 1</th>
+      <th>Contact Number 2</th>
+      <th>Inviter Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @new_converts.each do |convert| %>
+      <tr>
+        <td><%= convert.name %></td>
+        <td><%= convert.gender %></td>
+        <td><%= convert.date_of_birth %></td>
+        <td><%= convert.contact_number_1 %></td>
+        <td><%= convert.contact_number_2 %></td>
+        <td><%= convert.inviter_name %></td>
+        <td><%= link_to 'Show', new_convert_path(convert), class: 'btn btn-primary btn-sm' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

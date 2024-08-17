@@ -1,0 +1,29 @@
+<!-- app/views/layouts/application.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UDRS</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <!-- Include Bootstrap Icons via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/@rails/ujs@7.0.4/lib/assets/compiled/rails-ujs.js"></script>
+  </head>
+
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar -->
+      <% unless devise_controller? %>
+        <%= render 'shared/sidebar' %>
+      <% end %>
+
+      <!-- Main content -->
+      <div class="flex-grow-1 p-4" style="min-width: 0;">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

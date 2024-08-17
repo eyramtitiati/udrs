@@ -1,0 +1,105 @@
+<!-- app/views/new_converts/new.html.erb -->
+<h1 class="text-center mb-4">New Convert Registration</h1>
+
+<%= form_with model: @new_convert, local: true do |f| %>
+  <!-- Name Field -->
+  <div class="form-floating mb-3">
+    <%= f.text_field :name, class: "form-control", id: "floatingName", placeholder: "Full Name" %>
+    <%= f.label :name, "Full Name", for: "floatingName" %>
+  </div>
+
+  <!-- Gender Field -->
+  <div class="form-floating mb-3">
+    <%= f.select :gender, options_for_select([['Male', 'male'], ['Female', 'female']]), {}, class: "form-control", id: "floatingGender" %>
+    <%= f.label :gender, "Gender", for: "floatingGender" %>
+  </div>
+
+  <!-- Date of Birth Field -->
+  <div class="mb-3">
+    <label class="form-label">Date of Birth</label>
+    <%= f.date_select :date_of_birth, start_year: 1900, class: "form-control" %>
+  </div>
+
+  <!-- Contact Number 1 Field -->
+  <div class="form-floating mb-3">
+    <%= f.telephone_field :contact_number_1, class: "form-control", id: "floatingContact1", placeholder: "Primary Contact Number" %>
+    <%= f.label :contact_number_1, "Primary Contact Number", for: "floatingContact1" %>
+  </div>
+
+  <!-- Contact Number 2 Field -->
+  <div class="form-floating mb-3">
+    <%= f.telephone_field :contact_number_2, class: "form-control", id: "floatingContact2", placeholder: "Secondary Contact Number (Optional)" %>
+    <%= f.label :contact_number_2, "Secondary Contact Number (Optional)", for: "floatingContact2" %>
+  </div>
+
+  <h3>Location Details</h3>
+
+  <!-- House Number Field -->
+  <div class="form-floating mb-3">
+    <%= f.text_field :house_number, class: "form-control", id: "floatingHouseNumber", placeholder: "House Number" %>
+    <%= f.label :house_number, "House Number", for: "floatingHouseNumber" %>
+  </div>
+
+  <!-- Landmark Field -->
+  <div class="form-floating mb-3">
+    <%= f.text_field :landmark, class: "form-control", id: "floatingLandmark", placeholder: "Landmark" %>
+    <%= f.label :landmark, "Landmark", for: "floatingLandmark" %>
+  </div>
+
+  <!-- Area Field -->
+  <div class="form-floating mb-3">
+    <%= f.text_field :area, class: "form-control", id: "floatingArea", placeholder: "Area" %>
+    <%= f.label :area, "Area", for: "floatingArea" %>
+  </div>
+
+  <!-- City Field -->
+  <div class="form-floating mb-3">
+    <%= f.text_field :city, class: "form-control", id: "floatingCity", placeholder: "City" %>
+    <%= f.label :city, "City", for: "floatingCity" %>
+  </div>
+
+  <h3>Other Key Contact</h3>
+
+  <!-- Other Contact Name Field -->
+  <div class="form-floating mb-3">
+    <%= f.text_field :other_contact_name, class: "form-control", id: "floatingOtherContactName", placeholder: "Other Contact Name" %>
+    <%= f.label :other_contact_name, "Other Contact Name", for: "floatingOtherContactName" %>
+  </div>
+
+  <!-- Other Contact Number Field -->
+  <div class="form-floating mb-3">
+    <%= f.telephone_field :other_contact_number, class: "form-control", id: "floatingOtherContactNumber", placeholder: "Other Contact Number" %>
+    <%= f.label :other_contact_number, "Other Contact Number", for: "floatingOtherContactNumber" %>
+  </div>
+
+  <!-- Other Contact Relationship Field -->
+  <div class="form-floating mb-3">
+    <%= f.text_field :other_contact_relationship, class: "form-control", id: "floatingOtherContactRelationship", placeholder: "Relationship" %>
+    <%= f.label :other_contact_relationship, "Relationship", for: "floatingOtherContactRelationship" %>
+  </div>
+
+  <h3>Inviter Details</h3>
+
+  <!-- Inviter Name Field -->
+  <div class="form-floating mb-3">
+    <%= f.text_field :inviter_name, class: "form-control", id: "floatingInviterName", placeholder: "Inviter Name" %>
+    <%= f.label :inviter_name, "Inviter Name", for: "floatingInviterName" %>
+  </div>
+
+  <!-- Inviter Contact Field -->
+  <div class="form-floating mb-3">
+    <%= f.telephone_field :inviter_contact, class: "form-control", id: "floatingInviterContact", placeholder: "Inviter Contact" %>
+    <%= f.label :inviter_contact, "Inviter Contact", for: "floatingInviterContact" %>
+  </div>
+
+  <!-- Assigned Basenta Field -->
+  <div class="form-floating mb-3">
+    <%= f.collection_select :basenta_id, Basenta.all, :id, :name, {}, class: "form-control", id: "floatingBasenta" %>
+    <%= f.label :basenta_id, "Assigned Basenta", for: "floatingBasenta" %>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="d-grid gap-2">
+    <%= f.submit "Register", class: "btn btn-primary btn-lg" %>
+  </div>
+<% end %>
