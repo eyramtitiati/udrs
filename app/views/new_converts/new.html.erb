@@ -2,10 +2,16 @@
 <h1 class="text-center mb-4">New Convert Registration</h1>
 
 <%= form_with model: @new_convert, local: true do |f| %>
-  <!-- Name Field -->
+  <!-- First Name Field -->
   <div class="form-floating mb-3">
-    <%= f.text_field :name, class: "form-control", id: "floatingName", placeholder: "Full Name" %>
-    <%= f.label :name, "Full Name", for: "floatingName" %>
+    <%= f.text_field :first_name, class: "form-control", id: "floatingFirstName", placeholder: "First Name" %>
+    <%= f.label :first_name, "First Name", for: "floatingFirstName" %>
+  </div>
+
+  <!-- Last Name Field -->
+  <div class="form-floating mb-3">
+    <%= f.text_field :last_name, class: "form-control", id: "floatingLastName", placeholder: "Last Name" %>
+    <%= f.label :last_name, "Last Name", for: "floatingLastName" %>
   </div>
 
   <!-- Gender Field -->

@@ -39,7 +39,7 @@ class NewConvertsController < ApplicationController
 
   def new_convert_params
     params.require(:new_convert).permit(
-      :name, :gender, :date_of_birth, :contact_number_1, :contact_number_2,
+      :first_name, :last_name, :gender, :date_of_birth, :contact_number_1, :contact_number_2,
       :house_number, :landmark, :area, :city, 
       :other_contact_name, :other_contact_number, :other_contact_relationship, 
       :inviter_name, :inviter_contact, :basenta_id

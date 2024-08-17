@@ -6835,3 +6835,81 @@ Processing by NewConvertsController#new as HTML
 Completed 200 OK in 49ms (Views: 19.5ms | ActiveRecord: 22.7ms (1 query, 0 cached) | GC: 0.7ms)
 
 
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-08-17 19:15:31 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3001/
+Completed 303 See Other in 363ms (ActiveRecord: 19.2ms (1 query, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-08-17 19:15:32 +0000
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by AdminDashboardController#index as TURBO_STREAM
+  [1m[36mNewConvert Count (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "new_converts"[0m
+  ↳ app/controllers/admin_dashboard_controller.rb:6:in `index'
+  [1m[36mBasenta Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "basentas"[0m
+  ↳ app/controllers/admin_dashboard_controller.rb:7:in `index'
+  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/admin_dashboard_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering admin_dashboard/index.html.erb within layouts/application
+  Rendered admin_dashboard/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 3.7ms (3 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2024-08-17 19:19:24 +0000
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.erb:16
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 8.4ms | ActiveRecord: 9.9ms (2 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2024-08-17 19:19:36 +0000
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/admin/users/index.html.erb:16
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 16.7ms | ActiveRecord: 10.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3592528719441926775)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddFirstAndLastNameToNewConverts (20240817193819)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mALTER TABLE "new_converts" ADD "first_name" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "new_converts" ADD "last_name" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240817193819') RETURNING "version"[0m
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3592528719441926775)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-17 19:40:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NewConvertsController#new as HTML
+  Rendering layout layouts/public.html.erb
+  Rendering new_converts/new.html.erb within layouts/public
+  [1m[36mBasenta Load (0.8ms)[0m  [1m[34mSELECT "basentas".* FROM "basentas"[0m
+  ↳ app/views/new_converts/new.html.erb:103
+  Rendered new_converts/new.html.erb within layouts/public (Duration: 6.4ms | GC: 0.0ms)
+  Rendered layout layouts/public.html.erb (Duration: 22.0ms | GC: 3.1ms)
+Completed 200 OK in 53ms (Views: 22.3ms | ActiveRecord: 5.8ms (1 query, 0 cached) | GC: 3.3ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-08-17 19:40:39 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
