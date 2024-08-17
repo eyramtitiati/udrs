@@ -1,4 +1,3 @@
-<!-- app/views/layouts/application.html.erb -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,22 +7,26 @@
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <!-- Include Bootstrap Icons via CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Include Rails UJS directly via a script tag -->
     <script src="https://cdn.jsdelivr.net/npm/@rails/ujs@7.0.4/lib/assets/compiled/rails-ujs.js"></script>
   </head>
 
   <body>
-    <div class="d-flex">
-      <!-- Sidebar -->
-      <% unless devise_controller? %>
-        <%= render 'shared/sidebar' %>
-      <% end %>
-
-      <!-- Main content -->
-      <div class="flex-grow-1 p-4" style="min-width: 0;">
+    <% if user_signed_in? && current_user.admin? %>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2">
+            <%= render 'shared/sidebar' %>
+          </div>
+          <div class="col-md-10 offset-md-2">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="container mt-5">
         <%= yield %>
       </div>
-    </div>
+    <% end %>
   </body>
 </html>
