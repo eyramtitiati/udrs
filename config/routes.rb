@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get "profiles/show"
+  get "profiles/edit"
+  get "profiles/update"
   # New Converts routes for all users
   resources :new_converts, only: [:index, :new, :create, :show]
+  resource :profile, only: [:show, :edit, :update] 
 
   # Admin-specific routes
   namespace :admin do

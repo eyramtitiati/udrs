@@ -6913,3 +6913,55 @@ Started GET "/favicon.ico" for 127.0.0.1 at 2024-08-17 19:40:39 +0000
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+Started GET "/admin_dashboard" for 127.0.0.1 at 2024-08-17 19:59:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by AdminDashboardController#index as HTML
+  [1m[36mNewConvert Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "new_converts"[0m
+  ↳ app/controllers/admin_dashboard_controller.rb:6:in `index'
+  [1m[36mBasenta Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "basentas"[0m
+  ↳ app/controllers/admin_dashboard_controller.rb:7:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/admin_dashboard_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering admin_dashboard/index.html.erb within layouts/application
+  Rendered admin_dashboard/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 106.9ms | GC: 1.9ms)
+Completed 200 OK in 153ms (Views: 112.2ms | ActiveRecord: 4.4ms (3 queries, 0 cached) | GC: 14.4ms)
+
+
+Started GET "/new_converts" for 127.0.0.1 at 2024-08-17 19:59:07 +0000
+Processing by NewConvertsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering new_converts/index.html.erb within layouts/application
+  [1m[36mNewConvert Load (2.1ms)[0m  [1m[34mSELECT "new_converts".* FROM "new_converts"[0m
+  ↳ app/views/new_converts/index.html.erb:18
+  Rendered new_converts/index.html.erb within layouts/application (Duration: 25.9ms | GC: 10.6ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | GC: 10.9ms)
+Completed 200 OK in 35ms (Views: 26.8ms | ActiveRecord: 5.9ms (1 query, 0 cached) | GC: 10.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-08-17 19:59:09 +0000
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.2ms)
+Completed 200 OK in 28ms (Views: 7.8ms | ActiveRecord: 6.4ms (1 query, 0 cached) | GC: 5.5ms)
+
+
+Started GET "/profile/edit" for 127.0.0.1 at 2024-08-17 19:59:10 +0000
+Processing by ProfilesController#edit as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/edit.html.erb within layouts/application (Duration: 6.4ms | GC: 2.7ms)
+  Rendered shared/_sidebar.html.erb (Duration: 1.0ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | GC: 15.3ms)
+Completed 200 OK in 32ms (Views: 25.4ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 17.1ms)
+
+
