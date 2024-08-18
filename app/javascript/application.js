@@ -10,3 +10,26 @@ document.addEventListener('turbo:load', () => {
       return new bootstrap.Tooltip(tooltipTriggerEl)
     })
   })
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const knowsSomeoneSelect = document.getElementById("knowsSomeoneSelect");
+    const someoneNameField = document.getElementById("someoneNameField");
+  
+    if (knowsSomeoneSelect) {
+      knowsSomeoneSelect.addEventListener("change", function() {
+        if (knowsSomeoneSelect.value === "yes") {
+          someoneNameField.style.display = "block";
+        } else {
+          someoneNameField.style.display = "none";
+        }
+      });
+  
+      // Initial check in case of back button navigation
+      if (knowsSomeoneSelect.value === "yes") {
+        someoneNameField.style.display = "block";
+      } else {
+        someoneNameField.style.display = "none";
+      }
+    }
+  });
+  

@@ -23,9 +23,9 @@
         </div>
 
         <!-- Date of Birth Field -->
-        <div class="mb-3">
-          <label class="form-label">Date of Birth</label>
-          <%= f.date_select :date_of_birth, start_year: 1900, class: "form-control" %>
+        <div class="form-floating mb-3">
+            <%= f.date_field :date_of_birth, class: "form-control", id: "floatingDateOfBirth", placeholder: "Date of Birth" %>
+            <%= f.label :date_of_birth, "Date of Birth", for: "floatingDateOfBirth" %>
         </div>
 
         <!-- Contact Number 1 Field -->
@@ -87,6 +87,26 @@
         <div class="form-floating mb-3">
           <%= f.collection_select :basenta_id, Basenta.all, :id, :name, {}, class: "form-control", id: "floatingBasenta" %>
           <%= f.label :basenta_id, "Assigned Basenta", for: "floatingBasenta" %>
+        </div>
+
+        <!-- New Fields -->
+
+        <!-- 1. Do you know anyone else in Church? -->
+        <div class="mb-3">
+          <label class="form-label">Do you know anyone else in Church?</label>
+          <%= f.select :knows_someone, options_for_select([['No', 'no'], ['Yes', 'yes']]), {}, class: "form-control", id: "knowsSomeoneSelect" %>
+        </div>
+
+        <!-- Conditional field for the name if Yes is selected -->
+        <div class="form-floating mb-3" id="someoneNameField" style="display: none;">
+          <%= f.text_field :someone_name, class: "form-control", id: "floatingSomeoneName", placeholder: "Name of the person" %>
+          <%= f.label :someone_name, "Name of the person you know", for: "floatingSomeoneName" %>
+        </div>
+
+        <!-- 2. Would you like to join us? -->
+        <div class="mb-3">
+          <label class="form-label">Would you like to join us?</label>
+          <%= f.select :join_us, options_for_select([['Visitor', 'visitor'], ['Yes', 'yes']]), {}, class: "form-control" %>
         </div>
 
         <!-- Submit Button -->

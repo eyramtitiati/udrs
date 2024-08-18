@@ -8,7 +8,6 @@
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any other CSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
  *
  *= require_tree .
  *= require_self
@@ -16,50 +15,57 @@
 
  @import "bootstrap";
 
-
-/* app/assets/stylesheets/application.scss */
-
-/* Sidebar styles */
-.sidebar {
-    width: 4.5rem; /* Fixed width for sidebar */
-    min-height: 100vh; /* Full height */
-    background-color: #343a40; /* Dark background for sidebar */
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .sidebar .nav-link {
-    color: #ffffff;
-    transition: background-color 0.3s ease;
-  }
-  
-  .sidebar .nav-link.active {
-    background-color: #0d6efd; /* Active link background color */
-  }
-  
-  .sidebar .nav-link:hover {
-    background-color: #495057; /* Hover background color */
-  }
-  
-  /* Align dropdown to the bottom */
-  .sidebar .dropdown {
-    margin-top: auto;
-  }
-  
-  /* Content styles */
-  .flex-grow-1 {
-    overflow-x: auto; /* Handle content overflow */
-  }
-  
-  /* Ensure the content adjusts properly for small screens */
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 4.5rem; /* Compact sidebar on smaller screens */
-    }
-  
-    .flex-grow-1 {
-      margin-left: 4.5rem; /* Adjust content margin for small screens */
-    }
-  }
-  
+ /* Sidebar styles */
+ .sidebar {
+     width: 4.5rem; /* Fixed width for sidebar */
+     min-height: 100vh; /* Full height */
+     background-color: #343a40; /* Dark background for sidebar */
+     flex-shrink: 0;
+     display: flex;
+     flex-direction: column;
+     position: fixed; /* Make sidebar fixed */
+     top: 0;
+     left: 0;
+     z-index: 1000;
+ }
+ 
+ .sidebar .nav-link {
+     color: #ffffff;
+     transition: background-color 0.3s ease;
+ }
+ 
+ .sidebar .nav-link.active {
+     background-color: #0d6efd; /* Active link background color */
+ }
+ 
+ .sidebar .nav-link:hover {
+     background-color: #495057; /* Hover background color */
+ }
+ 
+ /* Align dropdown to the bottom */
+ .sidebar .dropdown {
+     margin-top: auto;
+ }
+ 
+ /* Content styles */
+ .flex-grow-1 {
+     overflow-x: auto; /* Handle content overflow */
+     margin-left: 4.5rem; /* Ensure content doesn't overlap with sidebar */
+     padding: 1rem;
+ }
+ 
+ /* Ensure the content adjusts properly for small screens */
+ @media (max-width: 768px) {
+     .sidebar {
+         width: 100%; /* Full width sidebar on small screens */
+         height: auto; /* Let sidebar height adjust to content */
+         position: static; /* Sidebar becomes static on small screens */
+         border-bottom: 1px solid #ddd; /* Separate sidebar from content */
+     }
+ 
+     .flex-grow-1 {
+         margin-left: 0; /* No margin on small screens */
+         padding: 1rem; /* Add padding for better spacing */
+     }
+ }
+ 

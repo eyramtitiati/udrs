@@ -50,7 +50,7 @@ class NewConvertsController < ApplicationController
       :first_name, :last_name, :gender, :date_of_birth, :contact_number_1, :contact_number_2,
       :house_number, :landmark, :area, :city, 
       :other_contact_name, :other_contact_number, :other_contact_relationship, 
-      :inviter_name, :inviter_contact, :basenta_id
+      :inviter_name, :inviter_contact, :basenta_id,:knows_someone, :someone_name, :join_us
     )
   end
 end
