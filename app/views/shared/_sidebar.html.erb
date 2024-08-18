@@ -1,27 +1,26 @@
-<!-- app/views/shared/_sidebar.html.erb -->
-<div class="d-flex flex-column flex-shrink-0 bg-dark text-white" style="width: 4.5rem; min-height: 100vh;">
+<div class="d-flex flex-column flex-shrink-0 bg-light text-white" style="width: 4.5rem; min-height: 100vh;">
   <a href="/" class="d-block p-3 link-light text-decoration-none" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
-    <i class="bi bi-bootstrap"></i>
+    <%= image_tag 'logo.png', class: 'img-fluid', alt: 'Dashboard Logo' %>
     <span class="visually-hidden">Dashboard</span>
   </a>
   <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
     <li class="nav-item">
-      <%= link_to admin_root_path, class: "nav-link active py-3 border-bottom rounded-0", title: "Home", data: { bs_toggle: "tooltip", bs_placement: "right" } do %>
+      <%= link_to admin_root_path, class: "nav-link py-3 border-bottom rounded-0 #{'active' if current_page?(admin_root_path)}", title: "Home", data: { bs_toggle: "tooltip", bs_placement: "right" } do %>
         <i class="bi bi-house-door-fill"></i>
       <% end %>
     </li>
     <li>
-      <%= link_to new_converts_path, class: "nav-link py-3 border-bottom rounded-0", title: "New Converts", data: { bs_toggle: "tooltip", bs_placement: "right" } do %>
+      <%= link_to new_converts_path, class: "nav-link py-3 border-bottom rounded-0 #{'active' if current_page?(new_converts_path)}", title: "New Converts", data: { bs_toggle: "tooltip", bs_placement: "right" } do %>
         <i class="bi bi-person-plus-fill"></i>
       <% end %>
     </li>
     <li>
-      <%= link_to admin_basentas_path, class: "nav-link py-3 border-bottom rounded-0", title: "Basentas", data: { bs_toggle: "tooltip", bs_placement: "right" } do %>
+      <%= link_to admin_basentas_path, class: "nav-link py-3 border-bottom rounded-0 #{'active' if current_page?(admin_basentas_path)}", title: "Basentas", data: { bs_toggle: "tooltip", bs_placement: "right" } do %>
         <i class="bi bi-geo-alt-fill"></i>
       <% end %>
     </li>
     <li>
-      <%= link_to admin_users_path, class: "nav-link py-3 border-bottom rounded-0", title: "Users", data: { bs_toggle: "tooltip", bs_placement: "right" } do %>
+      <%= link_to admin_users_path, class: "nav-link py-3 border-bottom rounded-0 #{'active' if current_page?(admin_users_path)}", title: "Users", data: { bs_toggle: "tooltip", bs_placement: "right" } do %>
         <i class="bi bi-people-fill"></i>
       <% end %>
     </li>
@@ -31,7 +30,7 @@
       <img src="https://github.com/mdo.png" alt="User" width="24" height="24" class="rounded-circle">
     <% end %>
     <ul class="dropdown-menu text-small shadow">
-     <li><%= link_to "Profile", profile_path, class: "dropdown-item" %></li>
+      <li><%= link_to "Profile", profile_path, class: "dropdown-item" %></li>
       <li><hr class="dropdown-divider"></li>
       <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
     </ul>

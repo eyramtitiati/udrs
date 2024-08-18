@@ -1,7 +1,5 @@
 class NewConvertsController < ApplicationController
-  layout "public", only: [:new, :create]
-
-  before_action :set_existing_inviter, only: [:new, :create]
+  before_action :set_layout
 
   def index
     @new_converts = NewConvert.all
@@ -26,6 +24,16 @@ class NewConvertsController < ApplicationController
 
   private
 
+  # Use the application layout only for admins, otherwise use the public layout
+  def set_layout
+    if user_signed_in? && current_user.admin?
+      self.class.layout 'application'
+    else
+      self.class.layout 'public'
+    end
+  end
+
+  # Other private methods for your controller (like set_existing_inviter and new_convert_params)
   def set_existing_inviter
     if params[:inviter_name].present? || params[:inviter_contact].present?
       existing_inviter = NewConvert.find_by(inviter_name: params[:inviter_name], inviter_contact: params[:inviter_contact])

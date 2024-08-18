@@ -18,7 +18,10 @@
       <!-- Sidebar -->
       <% if user_signed_in? && current_user.admin? %>
         <%= render 'shared/sidebar' %>
+      <% else %>
+        <p>Sidebar is hidden because the user is not an admin.</p>
       <% end %>
+
 
       <!-- Main content -->
       <div class="flex-grow-1 p-4" style="min-width: 0;">
