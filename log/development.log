@@ -8794,3 +8794,100 @@ Processing by NewConvertsController#new as HTML
 Completed 200 OK in 108ms (Views: 37.6ms | ActiveRecord: 44.3ms (2 queries, 0 cached) | GC: 6.5ms)
 
 
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-18 11:06:02 +0000
+Processing by NewConvertsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/new_converts_controller.rb:29:in `set_layout'
+  Rendering layout layouts/application.html.erb
+  Rendering new_converts/new.html.erb within layouts/application
+  [1m[36mBasenta Load (1.0ms)[0m  [1m[34mSELECT "basentas".* FROM "basentas"[0m
+  ↳ app/views/new_converts/new.html.erb:88
+  Rendered new_converts/new.html.erb within layouts/application (Duration: 11.0ms | GC: 5.8ms)
+  Rendered shared/_sidebar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6134.2ms | GC: 40.6ms)
+Completed 200 OK in 6220ms (Views: 6133.6ms | ActiveRecord: 14.3ms (2 queries, 0 cached) | GC: 50.0ms)
+
+
+Started GET "/assets/application.debug-857c5bb8cfdbcffbbc7cc646ba16ce06b33aeee446c881e9d34d27bb265ed351.css" for 127.0.0.1 at 2024-08-18 11:06:08 +0000
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-08-18 11:06:09 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/new_converts" for 127.0.0.1 at 2024-08-18 11:07:00 +0000
+Processing by NewConvertsController#index as HTML
+  Rendering public/406-unsupported-browser.html
+  Rendered public/406-unsupported-browser.html (Duration: 0.3ms | GC: 0.0ms)
+Filter chain halted as #<Proc:0x00000001680f6090 /Users/eyram.titiati_devops/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/actionpack-7.2.0/lib/action_controller/metal/allow_browser.rb:48 (lambda)> rendered or redirected
+Completed 406 Not Acceptable in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-18 11:07:02 +0000
+Processing by NewConvertsController#new as HTML
+  Rendering public/406-unsupported-browser.html
+  Rendered public/406-unsupported-browser.html (Duration: 0.2ms | GC: 0.0ms)
+Filter chain halted as #<Proc:0x00000001680f6090 /Users/eyram.titiati_devops/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/actionpack-7.2.0/lib/action_controller/metal/allow_browser.rb:48 (lambda)> rendered or redirected
+Completed 406 Not Acceptable in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-18 11:07:09 +0000
+Processing by NewConvertsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/new_converts_controller.rb:29:in `set_layout'
+  Rendering layout layouts/application.html.erb
+  Rendering new_converts/new.html.erb within layouts/application
+  [1m[36mBasenta Load (1.0ms)[0m  [1m[34mSELECT "basentas".* FROM "basentas"[0m
+  ↳ app/views/new_converts/new.html.erb:88
+  Rendered new_converts/new.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.6ms)
+Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 4.0ms (2 queries, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/assets/application.css-841eff3f18c7b58bdefaf507707e8b39500462e6386444576dfc97f8ec9d4dfa.map" for 127.0.0.1 at 2024-08-18 11:07:09 +0000
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-18 11:10:01 +0000
+Processing by NewConvertsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/new_converts_controller.rb:29:in `set_layout'
+  Rendering layout layouts/application.html.erb
+  Rendering new_converts/new.html.erb within layouts/application
+  [1m[36mBasenta Load (0.7ms)[0m  [1m[34mSELECT "basentas".* FROM "basentas"[0m
+  ↳ app/views/new_converts/new.html.erb:88
+  Rendered new_converts/new.html.erb within layouts/application (Duration: 13.0ms | GC: 4.5ms)
+  Rendered shared/_sidebar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5964.0ms | GC: 14.0ms)
+Completed 200 OK in 5996ms (Views: 5963.4ms | ActiveRecord: 22.3ms (2 queries, 0 cached) | GC: 14.0ms)
+
+
+Started GET "/assets/application.debug-ac9b51dbb814ec796e0acffe14ec8a1f0f86b747c0fd589b00a77802bb5416a9.css" for 127.0.0.1 at 2024-08-18 11:10:07 +0000
+Started GET "/assets/application.css-919a33db6266dbd4eada39aeeb3250836bed4946bc80af65eab1643ca8422494.map" for 127.0.0.1 at 2024-08-18 11:10:08 +0000
+Started GET "/" for 127.0.0.1 at 2024-08-18 11:11:20 +0000
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by AdminDashboardController#index as HTML
+  Rendering public/406-unsupported-browser.html
+  Rendered public/406-unsupported-browser.html (Duration: 0.3ms | GC: 0.0ms)
+Filter chain halted as #<Proc:0x00000001408d1288 /Users/eyram.titiati_devops/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/actionpack-7.2.0/lib/action_controller/metal/allow_browser.rb:48 (lambda)> rendered or redirected
+Completed 406 Not Acceptable in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-18 11:11:22 +0000
+Processing by NewConvertsController#new as HTML
+  Rendering public/406-unsupported-browser.html
+  Rendered public/406-unsupported-browser.html (Duration: 0.1ms | GC: 0.0ms)
+Filter chain halted as #<Proc:0x00000001408d1288 /Users/eyram.titiati_devops/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/actionpack-7.2.0/lib/action_controller/metal/allow_browser.rb:48 (lambda)> rendered or redirected
+Completed 406 Not Acceptable in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/new_converts/new" for 127.0.0.1 at 2024-08-18 11:11:26 +0000
+Processing by NewConvertsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/new_converts_controller.rb:29:in `set_layout'
+  Rendering layout layouts/application.html.erb
+  Rendering new_converts/new.html.erb within layouts/application
+  [1m[36mBasenta Load (2.1ms)[0m  [1m[34mSELECT "basentas".* FROM "basentas"[0m
+  ↳ app/views/new_converts/new.html.erb:88
+  Rendered new_converts/new.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered shared/_sidebar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 9.9ms | ActiveRecord: 3.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
